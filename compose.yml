@@ -1,0 +1,13 @@
+# Default POSTGRES_USER is postgres. POSTGRES_DB defaults to POSTGRES_USER if not specified.
+version: "3.1"
+services:
+  db:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: poster
+    volumes:
+      - ./pgdata:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
